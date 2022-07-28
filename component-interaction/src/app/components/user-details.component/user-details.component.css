@@ -1,3 +1,10 @@
-.css{
+.greenBackground{
     background-color: green;
+    margin-bottom: 10px;
+}
+
+.greyBackground{
+    background-color: grey;
+    margin-bottom: 10px;
+
 }

@@ -1,4 +1,5 @@
 import { Component, Input } from "@angular/core";
+
 import { UserModel } from "src/app/models/user.model";
 
 @Component({
@@ -8,5 +9,5 @@ import { UserModel } from "src/app/models/user.model";
 })
 
 export class UserDetailsComponent{
-    @Input() usersList: any;
+    @Input() user: any;
 }

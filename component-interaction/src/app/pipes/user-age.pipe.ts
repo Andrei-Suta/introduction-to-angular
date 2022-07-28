@@ -1,11 +1,10 @@
 import { Pipe, PipeTransform } from "@angular/core";
 
-@Pipe({name: 'userAgePipe'})
+@Pipe({name: 'userAge'})
 
 export class UserAgePipe implements PipeTransform{
-    transform(date: Date): number{
+    public transform(date: Date): number{
         let timeDiff = Math.abs(Date.now() - date.getTime());
-        let age = Math.floor((timeDiff / (1000 * 3600 * 24))/365.25);
-        return age;
+        return Math.floor((timeDiff / (1000 * 3600 * 24))/365.25);       
     }
 }

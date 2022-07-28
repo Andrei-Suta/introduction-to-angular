@@ -1,1 +1,1 @@
-<user-details [usersList]="users"></user-details>
+<user-details *ngFor="let u of users" [user]="u"></user-details>

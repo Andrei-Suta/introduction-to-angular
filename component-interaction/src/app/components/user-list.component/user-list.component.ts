@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+
 import { UserModel } from "src/app/models/user.model";
 
 @Component({
@@ -8,7 +9,7 @@ import { UserModel } from "src/app/models/user.model";
 })
 
 export class UserListComponent{
-    users: UserModel[]=[
+    users: UserModel[] = [
         {
             "email": 'alex.ionescu@gmail.com',
             "dateOfBirth": new Date("2009-03-02"),
