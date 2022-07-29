@@ -8,7 +8,7 @@ import { UserModel } from "src/app/models/user.model";
     styleUrls: ["./user-list.component.css"]
 })
 export class UserListComponent{
-    users: UserModel[] = [
+    public users: UserModel[] = [
         {
             "email": "alex.ionescu@gmail.com",
             "dateOfBirth": new Date("2009-03-02"),

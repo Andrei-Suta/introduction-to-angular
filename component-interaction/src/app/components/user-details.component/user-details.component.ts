@@ -8,5 +8,11 @@ import { UserModel } from "src/app/models/user.model";
     styleUrls: ["./user-details.component.css"]
 })
 export class UserDetailsComponent{
-    @Input() user: any;
+    @Input() 
+    public user: UserModel = {
+        "email": "alex.ionescu@gmail.com",
+        "dateOfBirth": new Date("2009-03-02"),
+        "name": "Alex Ionescu"
+    }
+        
 }
