@@ -1,11 +1,11 @@
-<div class="green-background" *ngIf="user.dateOfBirth | isAdult">
+<div [ngClass]="{adult: user.dateOfBirth | userAge | isAdult}">
     <h4>{{user.name}}</h4>
     <p>{{user.email}}</p>
     <p>{{user.dateOfBirth | userAge}}</p>
     <br>
 </div>
 
-<div class="grey-background" *ngIf="!(user.dateOfBirth | isAdult)">
+<div [ngClass]="{minor: !(user.dateOfBirth | userAge | isAdult)}">
     <h4>{{user.name}}</h4>
     <p>{{user.email}}</p>
     <p>{{user.dateOfBirth | userAge}}</p>
