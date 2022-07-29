@@ -1,0 +1,18 @@
+import { Component, Input } from "@angular/core";
+
+import { UserModel } from "src/app/models/user.model";
+
+@Component({
+    selector: "user-details",
+    templateUrl: "./user-details.component.html",
+    styleUrls: ["./user-details.component.css"]
+})
+export class UserDetailsComponent{
+    @Input() 
+    public user: UserModel = {
+        "email": "alex.ionescu@gmail.com",
+        "dateOfBirth": new Date("2009-03-02"),
+        "name": "Alex Ionescu"
+    }
+        
+}
