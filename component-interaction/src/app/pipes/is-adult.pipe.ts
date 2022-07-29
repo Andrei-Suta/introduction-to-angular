@@ -1,7 +1,6 @@
 import { Pipe, PipeTransform } from "@angular/core";
 
-@Pipe({name: 'isAdult'})
-
+@Pipe({name: "isAdult"})
 export class IsAdultPipe implements PipeTransform{
     public transform(date: Date): boolean{
         let timeDiff = Math.abs(Date.now() - date.getTime());
