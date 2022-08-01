@@ -2,6 +2,7 @@
     <h4>{{user.name}}</h4>
     <p>{{user.email}}</p>
     <p>{{user.dateOfBirth | userAge}}</p>
+    <button class="delete" (click)="this.userService.deleteUser(user.email)">Delete This User</button>
     <br>
 </div>
 
