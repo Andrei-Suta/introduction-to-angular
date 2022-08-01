@@ -6,7 +6,7 @@ import { UserModel } from '../models/user.model';
 })
 export class UserService {
     public users: UserModel[] = []
-    constructor(){
+    public constructor(){
         this.users = [
             {
                 "email": "alex.ionescu@gmail.com",
@@ -25,17 +25,17 @@ export class UserService {
             }
         ]
     }
-    getUsers(): UserModel[]{
+    public getUsers(): UserModel[]{
         return this.users;
     }
 
-    addUser(user: UserModel): void{
+    public addUser(user: UserModel): void{
         this.users.push(user);
     }
 
-    deleteUser(email: string): void{
+    public deleteUser(email: string): void{
         for(let user of this.users){
-            if (user.email == email){
+            if (user.email === email){
                 this.users.splice(this.users.indexOf(user), 1);
                 return;
             }

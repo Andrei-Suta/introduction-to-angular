@@ -12,30 +12,30 @@ export class UserListComponent implements OnInit{
     public users?: UserModel[];
  
 
-    constructor(private userService: UserService){}
-    ngOnInit(): void {
+    public constructor(private userService: UserService){}
+    public ngOnInit(): void {
         this.users = this.userService.getUsers();
     }
 
-    addUser(): void{
+    public addUser(): void{
         let email = prompt("Enter Your Email");
-        if(email == null){ // deoarece prompt poate intoarce null, asignez empty
+        if (!email) { // deoarece prompt poate intoarce null, asignez empty
             email = "";   // string in acest caz pentru a nu avea erori
         }                // in cazul in care avem empty string, user-ul nu va fi creat si se va afisa o alerta
         let name = prompt("Enter Your Name");
-        if(name == null){
+        if (!name) {
             name = "";
         }
-        if(email.length > 0 && name.length > 0){
-            let newUser: UserModel = {
+        if (email.length === 0 || name.length === 0) {
+          alert("The New User Could Not Be Added");
+          return;
+        }
+        const newUser: UserModel = {
                 "email": email,
                 "dateOfBirth": new Date(),
                 "name": name
-            };
-            this.userService.addUser(newUser);
-        }else{
-            alert("The New User Could Not Be Added");
-        }
+         };
+         this.userService.addUser(newUser);
         
     }
     

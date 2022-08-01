@@ -16,6 +16,10 @@ export class UserDetailsComponent{
         "name": "Alex Ionescu"
     }
 
-    constructor(public userService: UserService){}
+    public constructor(private userService: UserService){}
+
+    public deleteUser(email: string): void{
+        this.userService.deleteUser(email);
+    }
         
 }
