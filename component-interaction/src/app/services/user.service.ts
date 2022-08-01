@@ -6,6 +6,7 @@ import { UserModel } from '../models/user.model';
 })
 export class UserService {
     public users: UserModel[] = []
+
     public constructor(){
         this.users = [
             {
@@ -25,6 +26,7 @@ export class UserService {
             }
         ]
     }
+
     public getUsers(): UserModel[]{
         return this.users;
     }
@@ -33,13 +35,22 @@ export class UserService {
         this.users.push(user);
     }
 
-    public deleteUser(email: string): void{
+    public deleteUser(email: string | undefined): void{
         for(let user of this.users){
             if (user.email === email){
                 this.users.splice(this.users.indexOf(user), 1);
                 return;
             }
         }
+    }
+
+    public findUser(email: string): UserModel{
+        for(let user of this.users){
+            if(user.email === email){
+                return user;
+            }
+        }
+        return this.users[0];
     }
 
 

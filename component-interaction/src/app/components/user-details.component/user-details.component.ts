@@ -1,4 +1,5 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
 
 import { UserModel } from "src/app/models/user.model";
 import { UserService } from "src/app/services/user.service";
@@ -8,17 +9,17 @@ import { UserService } from "src/app/services/user.service";
     templateUrl: "./user-details.component.html",
     styleUrls: ["./user-details.component.css"]
 })
-export class UserDetailsComponent{
+export class UserDetailsComponent implements OnInit{
     @Input() 
-    public user: UserModel = {
-        "email": "alex.ionescu@gmail.com",
-        "dateOfBirth": new Date("2009-03-02"),
-        "name": "Alex Ionescu"
-    }
+    public user?: UserModel;
 
     public constructor(private userService: UserService){}
 
-    public deleteUser(email: string): void{
+    ngOnInit(): void {
+        console.log("Salut");
+    }
+
+    public deleteUser(email: string | undefined): void{
         this.userService.deleteUser(email);
     }
         
