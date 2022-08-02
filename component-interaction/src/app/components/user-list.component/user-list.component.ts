@@ -9,6 +9,7 @@ import { UserService } from "src/app/services/user.service";
 	styleUrls: ["./user-list.component.css"]
 })
 export class UserListComponent implements OnInit {
+
 	public users?: UserModel[];
 
 	public constructor(private userService: UserService) { }

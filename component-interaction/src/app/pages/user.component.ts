@@ -10,12 +10,10 @@ import { UserService } from "../services/user.service";
 	styleUrls: ["./user.component.css"]
 })
 export class UserComponent implements OnInit {
+	public user?: UserModel;
+
 	public constructor(private userService: UserService, private route: ActivatedRoute) { }
-	public user: UserModel = {
-		"email": "andrei.suta@gmail.com",
-		"name": "Andrei Suta",
-		"dateOfBirth": new Date()
-	}
+
 	public ngOnInit(): void {
 		this.user = this.userService.findUser(this.route.snapshot.params[1]);
 	}

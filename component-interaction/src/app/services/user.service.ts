@@ -1,11 +1,12 @@
 import { Injectable } from "@angular/core";
+
 import { UserModel } from "../models/user.model";
 
 @Injectable({
 	providedIn: "root",
 })
 export class UserService {
-	public users: UserModel[] = []
+	private users: UserModel[] = [];
 
 	public constructor() {
 		this.users = [
@@ -44,13 +45,13 @@ export class UserService {
 		}
 	}
 
-	public findUser(email: string): UserModel {
+	public findUser(email: string): UserModel | undefined {
 		for (let user of this.users) {
 			if (user.email === email) {
 				return user;
 			}
 		}
-		return this.users[0];
+		return undefined;
 	}
 
 }
