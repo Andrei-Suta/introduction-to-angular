@@ -23,7 +23,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "app",
+            "prefix": "pm",
             "style": "camelCase"
           }
         ],
@@ -31,6 +31,7 @@
           "error",
           {
             "type": "element",
+            "prefix": "pm",
             "style": "kebab-case"
           }
         ],
