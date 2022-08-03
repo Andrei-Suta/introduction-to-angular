@@ -3,6 +3,6 @@
 </div>
 <ul>
 	<div *ngFor="let breed of this.breeds?.message | keyvalue">
-		<li>{{breed.key}}</li>
+		<li [routerLink]="['breed', breed.key]">{{breed.key | titlecase}}</li>
 	</div>
 </ul>
