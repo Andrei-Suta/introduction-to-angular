@@ -1,4 +1,4 @@
-export interface BreedModel {
+export interface BreedDTO {
 	message: Object,
 	status: string
 }
