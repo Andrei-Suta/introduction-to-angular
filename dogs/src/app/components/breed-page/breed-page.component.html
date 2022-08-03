@@ -1,13 +1,13 @@
 <button routerLink="" class="btn btn-primary">All Dogs</button>
 <div class="container">
-	<h1 class="header">{{this.breed | titlecase}}</h1>
+	<h1 class="header">{{this.breedName| titlecase}}</h1>
 </div>
 
 <div class="container">
-	<img src={{this.image}}>
+	<img src={{this.imageURL}}>
 	<h3>Sub-breed</h3>
 	<ul>
-		<div *ngFor="let breed of this.subBreeds">
+		<div *ngFor="let breed of this.subBreedsNames">
 			<li>{{breed | titlecase}}</li>
 		</div>
 	</ul>
