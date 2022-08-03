@@ -1,0 +1,14 @@
+<button routerLink="" class="btn btn-primary">All Dogs</button>
+<div class="container">
+	<h1 class="header">{{breedName| titlecase}}</h1>
+</div>
+
+<div class="container">
+	<img src={{imageURL}}>
+	<h3>Sub-breed</h3>
+	<ul>
+		<div *ngFor="let breed of subBreedNames">
+			<li>{{breed | titlecase}}</li>
+		</div>
+	</ul>
+</div>
