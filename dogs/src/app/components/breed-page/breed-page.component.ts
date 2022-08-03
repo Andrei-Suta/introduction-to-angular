@@ -12,21 +12,21 @@ export class BreedPageComponent implements OnInit {
 	public breedName: string = "";
 	public imageURL?: string;
 	public errorMessage?: string;
-	public subBreedsNames?: any;
+	public subBreedNames?: any;
 
 	public constructor(
 		private dogService: DogService,
-		private route: ActivatedRoute
+		private activatedRoute: ActivatedRoute
 	) { }
 
 	public ngOnInit(): void {
-		this.breedName = this.route.snapshot.paramMap.get("name") + "";
+		this.breedName = this.activatedRoute.snapshot.paramMap.get("name") + "";
 		this.dogService.getBreedImage(this.breedName).subscribe(
 			(image) => this.imageURL = image.message,
 			(err) => this.errorMessage = err
 		);
 		this.dogService.getSubBreeds(this.breedName).subscribe(
-			(breeds) => this.subBreedsNames = breeds.message,
+			(breeds) => this.subBreedNames = breeds.message,
 			(err) => this.errorMessage = err
 		);
 	}
