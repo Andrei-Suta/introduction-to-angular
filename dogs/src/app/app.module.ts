@@ -7,13 +7,15 @@ import { HomeComponent } from "./components/home-page/home-page.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { BreedPageComponent } from "./components/breed-page/breed-page.component";
 import { NotFoundComponent } from "./components/not-found/not-found.component";
+import { SubBreedPageComponent } from "./components/sub-breed-page/sub-breed-page.component";
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		HomeComponent,
 		BreedPageComponent,
-		NotFoundComponent
+		NotFoundComponent,
+		SubBreedPageComponent
 	],
 	imports: [
 		BrowserModule,

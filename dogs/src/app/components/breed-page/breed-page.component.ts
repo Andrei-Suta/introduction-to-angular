@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 
 import { DogService } from "src/app/services/dog.service";
 
@@ -16,7 +16,8 @@ export class BreedPageComponent implements OnInit {
 
 	public constructor(
 		private dogService: DogService,
-		private activatedRoute: ActivatedRoute
+		private activatedRoute: ActivatedRoute,
+		private router: Router
 	) { }
 
 	public ngOnInit(): void {
@@ -29,5 +30,9 @@ export class BreedPageComponent implements OnInit {
 			(breeds) => this.subBreedNames = breeds.message,
 			(err) => this.errorMessage = err
 		);
+	}
+
+	public navigationSubBreed(subbreed: string): void {
+		this.router.navigate([subbreed], { relativeTo: this.activatedRoute });
 	}
 }

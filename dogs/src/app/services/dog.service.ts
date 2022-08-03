@@ -22,6 +22,10 @@ export class DogService {
 		return this.http.get<ImageDTO>(`https://dog.ceo/api/breed/${breed}/images/random`);
 	}
 
+	public getSubBreedImage(breed?: string, subBreed?: string): Observable<ImageDTO> {
+		return this.http.get<ImageDTO>(`https://dog.ceo/api/breed/${breed}/${subBreed}/images/random`);
+	}
+
 	public getSubBreeds(breed?: string): Observable<BreedDTO> {
 		return this.http.get<BreedDTO>(`https://dog.ceo/api/breed/${breed}/list`);
 	}
