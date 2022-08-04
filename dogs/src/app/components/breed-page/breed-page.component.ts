@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute, Router } from "@angular/router";
+import { ActivatedRoute } from "@angular/router";
 
 import { DogService } from "src/app/services/dog.service";
 
@@ -17,15 +17,26 @@ export class BreedPageComponent implements OnInit {
 	public constructor(
 		private dogService: DogService,
 		private activatedRoute: ActivatedRoute,
-		private router: Router
 	) { }
 
 	public ngOnInit(): void {
+		this.getBreedNameFromURL();
+		this.getBreedImage();
+		this.getSubBreedNames
+	}
+
+	private getBreedNameFromURL(): void {
 		this.breedName = this.activatedRoute.snapshot.paramMap.get("name") + "";
+	}
+
+	private getBreedImage(): void {
 		this.dogService.getBreedImage(this.breedName).subscribe(
 			(image) => this.imageURL = image.message,
 			(err) => this.errorMessage = err
 		);
+	}
+
+	private getSubBreedNames(): void {
 		this.dogService.getSubBreeds(this.breedName).subscribe(
 			(breeds) => this.subBreedNames = breeds.message,
 			(err) => this.errorMessage = err
