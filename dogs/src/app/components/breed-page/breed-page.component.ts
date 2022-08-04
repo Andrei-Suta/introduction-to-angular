@@ -31,8 +31,4 @@ export class BreedPageComponent implements OnInit {
 			(err) => this.errorMessage = err
 		);
 	}
-
-	public navigationSubBreed(subbreed: string): void {
-		this.router.navigate([subbreed], { relativeTo: this.activatedRoute });
-	}
 }

@@ -20,8 +20,16 @@ export class SubBreedPageComponent implements OnInit {
 	) { }
 
 	public ngOnInit(): void {
+		this.prepareNamesFromURL();
+	}
+
+	public prepareNamesFromURL(): void {
 		this.breedName = this.activatedRoute.snapshot.paramMap.get("name") + "";
 		this.subBreedName = this.activatedRoute.snapshot.paramMap.get("subbreed") + "";
+		this.prepareImageURL(this.breedName, this.subBreedName);
+	}
+
+	public prepareImageURL(breedName: string, subBreedName: string): void {
 		this.dogService.getSubBreedImage(this.breedName, this.subBreedName).subscribe(
 			(imageURL) => this.imageURL = imageURL.message,
 			(err) => this.errorMessage = err
