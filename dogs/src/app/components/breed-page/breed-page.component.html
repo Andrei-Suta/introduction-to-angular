@@ -8,7 +8,7 @@
 	<h3>Sub-breed</h3>
 	<ul>
 		<div *ngFor="let breed of subBreedNames">
-			<li>{{breed | titlecase}}</li>
+			<li routerLink="../{{breedName}}/{{breed}}">{{breed | titlecase}}</li>
 		</div>
 	</ul>
 </div>

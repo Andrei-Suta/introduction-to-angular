@@ -20,11 +20,23 @@ export class BreedPageComponent implements OnInit {
 	) { }
 
 	public ngOnInit(): void {
+		this.prepareBreedNameFromURL();
+		this.prepareBreedImage();
+		this.prepareSubBreedNames();
+	}
+
+	private prepareBreedNameFromURL(): void {
 		this.breedName = this.activatedRoute.snapshot.paramMap.get("name") + "";
+	}
+
+	private prepareBreedImage(): void {
 		this.dogService.getBreedImage(this.breedName).subscribe(
 			(image) => this.imageURL = image.message,
 			(err) => this.errorMessage = err
 		);
+	}
+
+	private prepareSubBreedNames(): void {
 		this.dogService.getSubBreeds(this.breedName).subscribe(
 			(breeds) => this.subBreedNames = breeds.message,
 			(err) => this.errorMessage = err
