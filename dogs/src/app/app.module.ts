@@ -8,6 +8,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { BreedPageComponent } from "./components/breed-page/breed-page.component";
 import { NotFoundComponent } from "./components/not-found/not-found.component";
 import { SubBreedPageComponent } from "./components/sub-breed-page/sub-breed-page.component";
+import { RedirectHomeButtonComponent } from "./components/shared/redirect-home-button.component";
 
 @NgModule({
 	declarations: [
@@ -15,7 +16,8 @@ import { SubBreedPageComponent } from "./components/sub-breed-page/sub-breed-pag
 		HomeComponent,
 		BreedPageComponent,
 		NotFoundComponent,
-		SubBreedPageComponent
+		SubBreedPageComponent,
+		RedirectHomeButtonComponent
 	],
 	imports: [
 		BrowserModule,
